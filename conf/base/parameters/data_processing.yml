@@ -1,3 +1,4 @@
 samples: 15
 noise: 1.0
 seed: 1337
+noise_type: AMPLITUDE_ERROR
