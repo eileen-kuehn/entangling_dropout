@@ -1,0 +1,6 @@
+wires: 5
+shots: 1024
+stepsize: 0.2
+layers: 4
+epochs: 10
+batchsize: 5
