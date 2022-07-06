@@ -19,5 +19,27 @@ def create_pipeline(**kwargs) -> Pipeline:
                 outputs=["x_values", "y_values", "scale_x", "scale_y"],
                 name="generate_data",
             ),
+            node(
+                generate_data,
+                inputs=[
+                    "params:samples",
+                    "params:valnoise",
+                    "params:valseed",
+                    "noise_type",
+                ],
+                outputs=[
+                    "x_validation",
+                    "y_validation",
+                    "scale_x_validation",
+                    "scale_y_validation",
+                ],
+                name="generate_validation_data",
+            ),
+            node(
+                generate_data,
+                inputs="params:samples",
+                outputs=["x_test", "y_test", "scale_x_test", "scale_y_test"],
+                name="generate_test_data",
+            ),
         ]
     )
