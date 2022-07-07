@@ -1,6 +1,7 @@
-from enum import Enum
 import logging
+from enum import Enum
 from typing import Tuple, Union
+
 import numpy as np
 
 

@@ -6,7 +6,7 @@ generated using Kedro 0.18.1
 from kedro.pipeline import Pipeline, node
 from kedro.pipeline.modular_pipeline import pipeline
 
-from .nodes import train, create_qnode, create_cost_fn, evaluate, generate_loss_curve
+from .nodes import create_cost_fn, create_qnode, evaluate, generate_loss_curve, train
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -52,7 +52,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "cost_fn": "cost_fn",
                 },
                 outputs="loss_test",
-                name="evaluate_test_data"
+                name="evaluate_test_data",
             ),
             node(
                 generate_loss_curve,
